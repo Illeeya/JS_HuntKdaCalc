@@ -1,0 +1,69 @@
+body {
+    color: aliceblue;
+    background-color: rgb(31, 49, 39);
+    min-width: 100vh;
+    min-height: 100vh;
+    padding: 0%;
+    margin: 0%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+* {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+
+.mainBox {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    display: inline;
+    grid-column: 2/3;
+}
+
+.minorBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    color: black;
+    grid-column: 2/3;
+}
+
+.subBox {
+    display: inline-grid;
+    grid-template: 1fr 1fr 2fr 1fr 2fr 1fr/1fr 1fr 1fr;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    width: 50%;
+}
+
+input {
+    text-align: center;
+}
+
+label {
+    color: aliceblue;
+}
+
+#kdaLabel {
+    font-size: larger;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
