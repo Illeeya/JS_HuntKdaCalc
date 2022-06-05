@@ -1,39 +1,86 @@
+html {
+    height: 99vh;
+}
+
 body {
     color: aliceblue;
-    background-color: rgb(31, 49, 39);
-    min-width: 100vh;
-    min-height: 100vh;
+    background-color: rgb(22, 22, 22);
+    width: auto;
+    max-height: 100%;
     padding: 0%;
     margin: 0%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
 }
 
+.reverseColor {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    opacity: 90%;
+}
+
 * {
+    /* font-size: 1.2vh; */
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: large;
+    /* font-size: large; */
 }
 
 .mainBox {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 2em;
+    margin-bottom: 2em;
     display: inline;
     grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.mainImg {
+    width: 70%;
+    height: auto;
+}
+
+.lightImg {
+    width: 100%;
+    height: auto;
+}
+
+.imgBox {
+    margin-top: 1em;
+    margin-bottom: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+.leftBox {
+    grid-column: 1/2;
+    width: 100%;
+    height: 90%;
+}
+
+.rightBox {
+    grid-column: 3/4;
+    width: 100%;
+    height: 90%;
+}
+
+.eh {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .minorBox {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1vh;
-    color: black;
+    /* padding: 1em; */
+    /* color: black; */
     grid-column: 2/3;
 }
 
 .subBox {
     display: inline-grid;
-    grid-template: 1fr 1fr 2fr 1fr 2fr 1fr/1fr 1fr 1fr;
+    grid-template: 4em 2em 5em 2em 4em/1fr 1fr 1fr;
     text-align: center;
     justify-items: center;
     align-items: center;
@@ -48,8 +95,19 @@ label {
     color: aliceblue;
 }
 
-#kdaLabel {
-    font-size: larger;
+.labelIcon {
+    width: 2em;
+}
+
+.labelIconBox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.divider {
+    width: 100%;
+    border-top: 1px solid aliceblue;
 }
 
 
@@ -66,4 +124,27 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+@media (orientation: landscape) {
+    * {
+        font-size: 1vw;
+    }
+}
+
+@media (orientation: portrait) {
+    * {
+        font-size: 1vh;
+    }
+    body {
+        grid-template-columns: 1fr 6fr 1fr;
+    }
+    .lightImg {
+        width: 90%;
+        height: 100vh;
+    }
+    .mainImg {
+        width: 90%;
+        height: auto;
+    }
 }

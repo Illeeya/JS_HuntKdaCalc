@@ -1,12 +1,9 @@
 import {
     Button
+    , DivedImg
     , InputField
     , Label
 } from "./DomElements.js";
-//
-const DIVIDER = document.createElement("hr");
-DIVIDER.style.width = "100%";
-DIVIDER.style.gridColumn = "1/4";
 //
 const KILLS_INPUT = new InputField("2/1/3/2", "KILL_INPUT");
 const ASSISTS_INPUT = new InputField("2/2/3/3", "ASSIST_INPUT");
@@ -20,6 +17,14 @@ function buildBasicCalc() {
     const ASSISTS_LBL = new Label("Assists", "ASSISTS_INPUT", "1/2/2/3");
     const DEATHS_LBL = new Label("Deaths", "DEATHS_INPUT", "1/3/2/4");
     //
+    const KILLS_ICON = new DivedImg("assets/img/killIcon.png");
+    const ASSISTS_ICON = new DivedImg("assets/img/assistIcon.png");
+    const DEATHS_ICON = new DivedImg("assets/img/deathIcon.png");
+    //
+    KILLS_LBL.insertBefore(KILLS_ICON, KILLS_LBL.firstChild);
+    ASSISTS_LBL.insertBefore(ASSISTS_ICON, ASSISTS_LBL.firstChild);
+    DEATHS_LBL.insertBefore(DEATHS_ICON, DEATHS_LBL.firstChild);
+    //
     basicCalc.appendChild(KILLS_LBL);
     basicCalc.appendChild(ASSISTS_LBL);
     basicCalc.appendChild(DEATHS_LBL);
@@ -28,7 +33,12 @@ function buildBasicCalc() {
     basicCalc.appendChild(ASSISTS_INPUT);
     basicCalc.appendChild(DEATHS_INPUT);
     //
-    const CALCULATE_BUTTON = new Button("Calculate KDA", "3/1/4/4", "50%");
+    const CALCULATE_BUTTON = new Button(
+        "Calculate KDA"
+        , "3/1/4/4"
+        , "50%"
+        , "btn-secondary"
+    );
     CALCULATE_BUTTON.onclick = calculateKda;
     //
     basicCalc.appendChild(CALCULATE_BUTTON);
@@ -53,8 +63,6 @@ function buildBasicCalc() {
 
         KDA_LABEL.textContent = "KDA";
     }
-
-    basicCalc.appendChild(DIVIDER.cloneNode(true));
 }
 
 function buildDesiredCalc() {
@@ -66,7 +74,12 @@ function buildDesiredCalc() {
     const DESIRED_INPUT = new InputField("2/1/3/4", "DESIRED_INPUT");
     desiredCalc.appendChild(DESIRED_INPUT);
     //
-    const CALCULATE_BUTTON = new Button("Calculate", "3/1/4/4", "50%");
+    const CALCULATE_BUTTON = new Button(
+        "Calculate"
+        , "3/1/4/4"
+        , "50%"
+        , "btn-secondary"
+    );
     CALCULATE_BUTTON.onclick = calculateDesiredKda;
     desiredCalc.appendChild(CALCULATE_BUTTON);
     //
